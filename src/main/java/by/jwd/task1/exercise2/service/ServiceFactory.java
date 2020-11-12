@@ -7,8 +7,8 @@ public class ServiceFactory {
     
     private static final ServiceFactory instance = new ServiceFactory();
     
-    private static final MonthService  monthService = new MonthServiceImpl();
-    private static final YearService  yearService = new YearServiceImpl();
+    private static MonthService  monthService = new MonthServiceImpl();
+    private static YearService  yearService = new YearServiceImpl();
     
     private ServiceFactory() {}
 
