@@ -7,8 +7,8 @@ public class ServiceFactory {
     
     private static final ServiceFactory instance = new ServiceFactory();
     
-    private static final CircleService circleService = new CircleServiceImpl();
-    private static final SquareService squareService = new SquareServiceImpl();
+    private final CircleService circleService = new CircleServiceImpl();
+    private final SquareService squareService = new SquareServiceImpl();
     
     private ServiceFactory() {}
 
