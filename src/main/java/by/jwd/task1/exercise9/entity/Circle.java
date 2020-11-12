@@ -6,7 +6,7 @@ public class Circle implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
-    double radius;
+    private double radius;
     
     public Circle() {}
 
