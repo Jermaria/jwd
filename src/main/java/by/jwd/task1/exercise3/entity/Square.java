@@ -8,7 +8,7 @@ public class Square implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
-    double side;
+    private double side;
     
     public Square() {}
 
