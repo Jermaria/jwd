@@ -11,9 +11,8 @@ public class YearServiceImplTest {
       YearServiceImpl service = new YearServiceImpl();
       
       boolean actual = service.isLeap(2020);
-      boolean expected = true;
       
-      Assert.assertEquals(actual, expected);
+      Assert.assertTrue(actual);
 
   }
 }
