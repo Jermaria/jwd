@@ -5,10 +5,10 @@ import by.jwd.task1.exercise3.entity.Square;
 public interface SquareService {
     
     
-    public double getSideByArea(double area) throws NoSuchShapeException;
+    double calculateSideByArea(double area) throws NoSuchShapeException;
     
-    public double getSideByCircumscribedRadius(double radius) throws NoSuchShapeException;
+    double calculateSideByCircumscribedRadius(double radius) throws NoSuchShapeException;
     
-    public double calculateArea(Square square) throws NoSuchShapeException;
+    double calculateArea(Square square) throws NoSuchShapeException;
 
 }

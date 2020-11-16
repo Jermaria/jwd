@@ -5,11 +5,13 @@ import by.jwd.task1.exercise3.service.NoSuchShapeException;
 import by.jwd.task1.exercise3.service.SquareService;
 
 public class SquareServiceImpl implements SquareService {
+    
+    private static final Validator VALIDATOR = Validator.getInstance();
 
     @Override
-    public double getSideByArea(double area) throws NoSuchShapeException {
+    public double calculateSideByArea(double area) throws NoSuchShapeException {
         
-        if(!isPositive(area)) {
+        if(VALIDATOR.isPositive(area)) {
             throw new NoSuchShapeException();
         }
         
@@ -18,7 +20,7 @@ public class SquareServiceImpl implements SquareService {
     }
     
     @Override
-    public double getSideByCircumscribedRadius(double radius) throws NoSuchShapeException {
+    public double calculateSideByCircumscribedRadius(double radius) throws NoSuchShapeException {
         
         double side = radius * 2 / Math.sqrt(2);
         
@@ -32,15 +34,6 @@ public class SquareServiceImpl implements SquareService {
         
         return side * side;
      
-    }
-    
-    public boolean isPositive(double number) {
-        
-        if (number > 0) {
-            return true;
-        }
-        
-        return false;
     }
 
 }

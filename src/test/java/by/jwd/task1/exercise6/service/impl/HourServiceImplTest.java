@@ -5,18 +5,22 @@ import static org.testng.Assert.fail;
 
 import org.testng.annotations.Test;
 
+import by.jwd.task1.exercise6.service.HourService;
+import by.jwd.task1.exercise6.service.ServiceFactory;
 import by.jwd.task1.exercise6.service.UnacceptableValueServiceException;
 
 public class HourServiceImplTest {
     
-    private static final HourServiceImpl service = new HourServiceImpl();
+  private static final ServiceFactory FACTORY = ServiceFactory.getInstance();
 
   @Test
   public void getHoursNumberTest() {
+      
+      HourService service = FACTORY.getHourService();
 
       try {
           
-        int actual = service.getHoursNumber(3700);
+        int actual = service.calculateHoursNumber(3700);
         int expected = 1;
 
         assertEquals(actual, expected);
@@ -30,6 +34,7 @@ public class HourServiceImplTest {
   @Test(expectedExceptions = UnacceptableValueServiceException.class)
   public void unacceptableValueServiceExceptionTest() throws UnacceptableValueServiceException {
       
-      service.getHoursNumber(-6);
+      HourService service = FACTORY.getHourService();
+      service.calculateHoursNumber(-6);
   }
 }

@@ -4,6 +4,14 @@ import by.jwd.task1.exercise4.entity.Expression;
 
 public class ParityChecker {
     
+    private static final ParityChecker INSTANCE = new ParityChecker();
+    
+    private ParityChecker() {}
+    
+    public static ParityChecker getInstance() {
+        return INSTANCE;
+    }
+
     public boolean isEven(int x) {
         
         boolean result = (x % 2 == 0) ? true : false;
@@ -12,6 +20,8 @@ public class ParityChecker {
     }
     
     public boolean isExpressionTrue(Expression e) {
+        
+        boolean result = false;
         
         int counter = 0;
         
@@ -24,11 +34,11 @@ public class ParityChecker {
             
             if (counter == 2) {
                 
-                return true;
+                result = true;
             }       
         }
         
-        return false;
+        return result;
     }
 
 }

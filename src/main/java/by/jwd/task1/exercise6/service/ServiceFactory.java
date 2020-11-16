@@ -6,7 +6,7 @@ import by.jwd.task1.exercise6.service.impl.ValidatorImpl;
 
 public class ServiceFactory {
     
-    private static final ServiceFactory instance = new ServiceFactory();
+    private static final ServiceFactory INSTANCE = new ServiceFactory();
     
     private final HourService hourService = new HourServiceImpl();
     private final MinuteService minuteService = new MinuteServiceImpl();
@@ -15,7 +15,7 @@ public class ServiceFactory {
     private ServiceFactory() {}
 
     public static ServiceFactory getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public HourService getHourService() {

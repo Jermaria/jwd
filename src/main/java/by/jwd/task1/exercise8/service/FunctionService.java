@@ -2,12 +2,12 @@ package by.jwd.task1.exercise8.service;
 
 public class FunctionService {
     
-    private static final FunctionService instance = new FunctionService();
+    private static final FunctionService INSTANCE = new FunctionService();
     
     private FunctionService() {}
 
     public static FunctionService getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public double calculate(double x) {

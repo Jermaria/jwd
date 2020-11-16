@@ -5,14 +5,18 @@ import static org.testng.Assert.fail;
 import org.testng.annotations.Test;
 
 import by.jwd.task1.exercise3.entity.Square;
+import by.jwd.task1.exercise3.service.CircleService;
 import by.jwd.task1.exercise3.service.NoSuchShapeException;
+import by.jwd.task1.exercise3.service.ServiceFactory;
 
 public class CircleServiceImplTest {
+    
+  private static final ServiceFactory FACTORY = ServiceFactory.getInstance();
 
   @Test
   public void calculateInscribedRadiusTest() {
     
-      CircleServiceImpl service = new CircleServiceImpl();
+      CircleService service = FACTORY.getCircleService();
       Square square;
       try {
           

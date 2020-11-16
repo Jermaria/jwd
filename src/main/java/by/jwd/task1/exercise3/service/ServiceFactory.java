@@ -5,7 +5,7 @@ import by.jwd.task1.exercise3.service.impl.SquareServiceImpl;
 
 public class ServiceFactory {
     
-    private static final ServiceFactory instance = new ServiceFactory();
+    private static final ServiceFactory INSTANCE = new ServiceFactory();
     
     private final CircleService circleService = new CircleServiceImpl();
     private final SquareService squareService = new SquareServiceImpl();
@@ -13,7 +13,7 @@ public class ServiceFactory {
     private ServiceFactory() {}
 
     public static ServiceFactory getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public CircleService getCircleService() {

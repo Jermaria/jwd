@@ -9,10 +9,10 @@ public class Main {
 		int x;
 		x = 178;
 		
-		Service service = new Service();
+		Service service = Service.getInstance();
 		
-		int xLastDigit = service.getLastDigit(x);
-		int result = service.getLastDigit(service.getSquare(xLastDigit));
+		int xLastDigit = service.defineLastDigit(x);
+		int result = service.defineLastDigit(service.calculateSquare(xLastDigit));
 
 		Printer printer = Printer.getInstance();
 		

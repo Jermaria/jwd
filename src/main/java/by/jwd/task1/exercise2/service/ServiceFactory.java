@@ -5,15 +5,15 @@ import by.jwd.task1.exercise2.service.impl.YearServiceImpl;
 
 public class ServiceFactory {
     
-    private static final ServiceFactory instance = new ServiceFactory();
+    private static final ServiceFactory INSTANCE = new ServiceFactory();
     
-    private static MonthService  monthService = new MonthServiceImpl();
-    private static YearService  yearService = new YearServiceImpl();
+    private final MonthService  monthService = new MonthServiceImpl();
+    private final YearService  yearService = new YearServiceImpl();
     
     private ServiceFactory() {}
 
     public static ServiceFactory getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public MonthService getMonthService() {

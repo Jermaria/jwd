@@ -7,7 +7,7 @@ import by.jwd.task1.exercise2.entity.Month;
 
 public interface MonthService {
     
-    public int scanMonthNumber(Scanner scan);
-    public Optional<Month> getMonthByNumber(int num);
+    int scanMonthNumber(Scanner scan);
+    Optional<Month> defineMonthByNumber(int num);
 
 }

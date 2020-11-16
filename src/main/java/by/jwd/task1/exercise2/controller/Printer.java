@@ -2,7 +2,7 @@ package by.jwd.task1.exercise2.controller;
 
 public class Printer {
     
- private static final Printer instance = new Printer();
+ private static final Printer INSTANCE = new Printer();
  
  private static final String IS_LEAP_MESSAGE = "Год високосный.";
  private static final String IS_NON_LEAP_MESSAGE = "Год невисокосный.";
@@ -19,7 +19,7 @@ public class Printer {
 
     public static Printer getInstance() {
         
-        return instance;
+        return INSTANCE;
     }
     
     public void printLeapResult() {
@@ -40,6 +40,10 @@ public class Printer {
     
     public void printFailureMessage() {
         System.out.println(FALURE_MESSAGE_FOR_USER);
+    }
+    
+    public void printMessage(String message) {
+        System.out.println(message);
     }
 
 }

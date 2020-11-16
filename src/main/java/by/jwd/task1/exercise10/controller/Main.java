@@ -19,7 +19,7 @@ public class Main {
 
         try {
             
-            Optional<Map<Integer, Double>> result = service.getResultsOprional(interval, step);
+            Optional<Map<Integer, Double>> result = service.calculateResultsOprional(interval, step);
             
             if (result.isPresent()) {
                 

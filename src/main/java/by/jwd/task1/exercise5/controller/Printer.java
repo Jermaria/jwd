@@ -3,7 +3,7 @@ package by.jwd.task1.exercise5.controller;
 
 public class Printer {
     
-    private static final Printer instance = new Printer();
+    private static final Printer INSTANCE = new Printer();
     
     private static final String PERFECT_RESULT_MESSAGE = "это число совершенное";
     private static final String IMPERFECT_RESULT_MESSAGE = "это число несовершенное";
@@ -12,7 +12,7 @@ public class Printer {
     private Printer() {}
 
     public static Printer getInstance() {
-        return instance;
+        return INSTANCE;
     }
     
     public void printPositiveResult() {  

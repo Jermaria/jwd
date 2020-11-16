@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+import by.jwd.task1.exercise2.controller.Printer;
 import by.jwd.task1.exercise2.entity.Month;
 import by.jwd.task1.exercise2.service.MonthService;
 
@@ -19,9 +20,11 @@ public class MonthServiceImpl implements MonthService{
         int monthNum = 0;
         boolean validationSuccessful = false;
         
+        Printer printer = Printer.getInstance();
+        
         do {
             
-            System.out.println(ENTER_MONTH_NUMBER_MESSAGE);
+            printer.printMessage(ENTER_MONTH_NUMBER_MESSAGE);
             
             if (scan.hasNextInt()) {
                 
@@ -42,7 +45,7 @@ public class MonthServiceImpl implements MonthService{
     }
 	
     @Override
-	public Optional<Month> getMonthByNumber(int num) {
+	public Optional<Month> defineMonthByNumber(int num) {
 		
 		List<Month> result = Arrays.stream(Month.values())
 		                              .filter(m -> num == m.getMonthNumber())

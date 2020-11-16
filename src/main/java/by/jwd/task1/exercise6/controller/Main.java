@@ -22,12 +22,12 @@ public class Main {
         
         try {
             
-            hoursNum = factory.getHourService().getHoursNumber(seconds);
-            minutesNum = factory.getMinuteService().getMinutesLeft(seconds);
-            secondsNum = factory.getMinuteService().getRemainder(seconds);
+            hoursNum = factory.getHourService().calculateHoursNumber(seconds);
+            minutesNum = factory.getMinuteService().calculateMinutesLeft(seconds);
+            secondsNum = factory.getMinuteService().calculateRemainder(seconds);
             
             List<Hour> hours = factory.getHourService().createHourList(hoursNum);
-            List<Minute> minutes = factory.getMinuteService().getMinutesList(minutesNum);
+            List<Minute> minutes = factory.getMinuteService().createMinutesList(minutesNum);
             
             Moment moment = new Moment(hours, minutes, secondsNum);
             

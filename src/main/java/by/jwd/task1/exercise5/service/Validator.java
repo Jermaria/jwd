@@ -2,12 +2,12 @@ package by.jwd.task1.exercise5.service;
 
 public class Validator {
     
-private static final Validator instance = new Validator();
+    private static final Validator INSTANCE = new Validator();
     
     private Validator() {}
 
     public static Validator getInstance() {
-        return instance;
+        return INSTANCE;
     }
     
     public boolean isPositive(int x) {

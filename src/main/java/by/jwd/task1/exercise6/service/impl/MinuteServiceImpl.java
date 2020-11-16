@@ -8,21 +8,21 @@ import by.jwd.task1.exercise6.service.MinuteService;
 
 public class MinuteServiceImpl implements MinuteService {
 
-    public int getMinutesTotal(int seconds) {
+    public int calculateMinutesTotal(int seconds) {
 
         return seconds / 60;
         
     }
     
-    public int getMinutesLeft(int seconds) {
+    public int calculateMinutesLeft(int seconds) {
         
-        int minutesTotal = getMinutesTotal(seconds-1);
+        int minutesTotal = calculateMinutesTotal(seconds-1);
         
         return minutesTotal % 60;
         
     }
     
-    public List<Minute> getMinutesList(int minutesNum) {
+    public List<Minute> createMinutesList(int minutesNum) {
         
         List<Minute> minutes = new ArrayList<Minute>();
         
@@ -36,7 +36,7 @@ public class MinuteServiceImpl implements MinuteService {
         return minutes;
     }
     
-    public int getRemainder(int seconds) {
+    public int calculateRemainder(int seconds) {
         
         int secondsPassed = seconds - 1;
         

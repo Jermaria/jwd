@@ -10,15 +10,15 @@ import by.jwd.task1.exercise6.service.UnacceptableValueServiceException;
 
 public class HourServiceImpl implements HourService {
     
-    ServiceFactory factory = ServiceFactory.getInstance();
+    private static final ServiceFactory FACTORY = ServiceFactory.getInstance();
     
-    public int getHoursNumber(int seconds) throws UnacceptableValueServiceException {
+    public int calculateHoursNumber(int seconds) throws UnacceptableValueServiceException {
         
         int hours = 0;
         
-        if (factory.getValidator().validateSecondsInput(seconds)) {
+        if (FACTORY.getValidator().validateSecondsInput(seconds)) {
             
-            int minutes = factory.getMinuteService().getMinutesTotal(seconds-1);
+            int minutes = FACTORY.getMinuteService().calculateMinutesTotal(seconds-1);
             
             hours = minutes / 60;
         }

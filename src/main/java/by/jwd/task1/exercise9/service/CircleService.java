@@ -2,13 +2,13 @@ package by.jwd.task1.exercise9.service;
 
 public class CircleService {
     
-    private static final CircleService instance = new CircleService();
+    private static final CircleService INSTANCE = new CircleService();
     private final Validator validator = Validator.getInstance();
     
     private CircleService() {}
 
     public static CircleService getInstance() {
-        return instance;
+        return INSTANCE;
     }
     
     public double calculateСircumference(double radius) throws UnacceptableRadiusServiceException {

@@ -2,14 +2,14 @@ package by.jwd.task1.exercise5.service;
 
 public class PerfectChecker {
     
-    private static final PerfectChecker instance = new PerfectChecker();
+    private static final PerfectChecker INSTANCE = new PerfectChecker();
     
     private static final String NOT_NATURAL_NUMBER_EXCEPTION_MESSAGE = "not natural number";
     
     private PerfectChecker() {}
 
     public static PerfectChecker getInstance() {
-        return instance;
+        return INSTANCE;
     }
     
     public boolean isNumberPerfect(int x) throws ServiceException {
@@ -33,9 +33,7 @@ public class PerfectChecker {
                 sum += i;
             }
         }
-        
-      
-            
+  
         result = (x == sum) ? true : false;
           
         return result;

@@ -45,7 +45,7 @@ public class Main {
           
             try {
             
-               Month m = monthService.getMonthByNumber(monthNumber)
+               Month m = monthService.defineMonthByNumber(monthNumber)
                             .orElseThrow(() -> new MainException(FAILURE_IN_MONTH_ENUM_EXEPTION));
                
                int daysInMonth = year.getMonths().get(m);

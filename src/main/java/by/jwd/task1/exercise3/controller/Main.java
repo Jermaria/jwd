@@ -21,14 +21,14 @@ public class Main {
         
         try {
             
-            Square circumscribedSquare = new Square(squareService.getSideByArea(circumscribedSquareArea));
+            Square circumscribedSquare = new Square(squareService.calculateSideByArea(circumscribedSquareArea));
             
             CircleService circleService = factory.getCircleService();
             
             Circle circle = new Circle(circleService.calculateInscribedRadius(circumscribedSquare));
             
             Square inscribedSquare = new Square(squareService
-                                           .getSideByCircumscribedRadius(circle.getRadius()));
+                                           .calculateSideByCircumscribedRadius(circle.getRadius()));
             
             double inscribedSquareArea = squareService.calculateArea(inscribedSquare);
             

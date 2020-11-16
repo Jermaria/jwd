@@ -6,7 +6,7 @@ public class Minute implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
-    private final int secondNum = 60;
+    private final int SECONDS_NUMBER = 60;
     
     public Minute() {}
 
@@ -15,14 +15,14 @@ public class Minute implements Serializable {
     }
 
     public int getSeconds() {
-        return secondNum;
+        return SECONDS_NUMBER;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + secondNum;
+        result = prime * result + SECONDS_NUMBER;
         return result;
     }
 
@@ -35,14 +35,14 @@ public class Minute implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Minute other = (Minute) obj;
-        if (secondNum != other.secondNum)
+        if (SECONDS_NUMBER != other.SECONDS_NUMBER)
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return this.getClass().getName() + " [seconds=" + secondNum + "]";
+        return this.getClass().getName() + " [seconds=" + SECONDS_NUMBER + "]";
     }
 
 }

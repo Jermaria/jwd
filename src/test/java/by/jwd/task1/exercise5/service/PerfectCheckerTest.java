@@ -1,34 +1,32 @@
 package by.jwd.task1.exercise5.service;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import org.testng.annotations.Test;
 
 public class PerfectCheckerTest {
     
-  private static final PerfectChecker checker = PerfectChecker.getInstance();
+  private static final PerfectChecker CHECKER = PerfectChecker.getInstance();
 
   @Test
   public void isDivisibleWithoutRemainderTest() {
     
-      boolean actual = checker.isDivisibleWithoutRemainder(10, 5);
-      boolean expected = true;
+      boolean actual = CHECKER.isDivisibleWithoutRemainder(10, 5);
 
-      assertEquals(actual, expected);
+      assertTrue(actual);
   }
 
   @Test
   public void isNumberPerfectTest() {
       
       int x = 6;
-      
-      boolean actual;
-      try {
-          actual = checker.isNumberPerfect(x);
-          boolean expected = true;
 
-          assertEquals(actual, expected);
+      try {
+          
+          boolean actual = CHECKER.isNumberPerfect(x);
+
+          assertTrue(actual);
         
       } catch (ServiceException e) {
           fail();
@@ -38,6 +36,6 @@ public class PerfectCheckerTest {
   @Test(expectedExceptions = ServiceException.class)
   public void ServiceExceptionTest() throws ServiceException {
       
-      checker.isNumberPerfect(-3);
+      CHECKER.isNumberPerfect(-3);
   }
 }

@@ -1,18 +1,26 @@
 package by.jwd.task1.exercise1.service;
 
 public class Service {
+    
+    private static final Service INSTANCE = new Service();
+    
+    private Service() {}  
 	
-	public int getSquare (int number) {
+	public static Service getInstance() {
+        return INSTANCE;
+    }
+
+    public int calculateSquare (int number) {
 		
 		int square;
 		
-		square = (int)Math.pow(number, 2);
+		square = number * number;
 		
 		return square;
 		
 	}
 	
-	public int getLastDigit(int number) {
+	public int defineLastDigit(int number) {
 		
 		int lastDigit;
 		

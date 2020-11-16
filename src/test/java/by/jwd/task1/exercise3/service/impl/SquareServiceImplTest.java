@@ -7,15 +7,19 @@ import org.testng.annotations.Test;
 
 import by.jwd.task1.exercise3.entity.Square;
 import by.jwd.task1.exercise3.service.NoSuchShapeException;
+import by.jwd.task1.exercise3.service.ServiceFactory;
+import by.jwd.task1.exercise3.service.SquareService;
 
 public class SquareServiceImplTest {
     
-    private final static SquareServiceImpl service = new SquareServiceImpl();
+    private static final ServiceFactory FACTORY = ServiceFactory.getInstance();
 
   @Test
   public void calculateAreaTest() {
           
       try {
+        
+        SquareService service = FACTORY.getSquareService();
         
         Square square = new Square(2);
         double actual = service.calculateArea(square);
@@ -38,10 +42,12 @@ public class SquareServiceImplTest {
 
   @Test
   public void getSideByAreaTest() {
+      
+      SquareService service = FACTORY.getSquareService();
     
       try {
           
-          double actual = service.getSideByArea(4);
+          double actual = service.calculateSideByArea(4);
           double expected = 2;
           assertEquals(actual, expected, 0.001);
           
@@ -54,10 +60,12 @@ public class SquareServiceImplTest {
   @Test
   public void getSideByCircumscribedRadiusTest() {
       
+      SquareService service = FACTORY.getSquareService();
+      
       double radius = 2 * Math.sqrt(2);
     
       try {
-        double actual = service.getSideByCircumscribedRadius(radius);
+        double actual = service.calculateSideByCircumscribedRadius(radius);
         double expected = 4;
         assertEquals(actual, expected, 0.001);
         
@@ -67,12 +75,4 @@ public class SquareServiceImplTest {
     }
   }
 
-  @Test
-  public void isPositiveTest() {
-      
-    boolean actual = service.isPositive(90);
-    boolean expected = true;
-    assertEquals(actual, expected);
-    
-  }
 }

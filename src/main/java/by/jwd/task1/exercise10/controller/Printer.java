@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Printer {
     
-    private static final Printer instance = new Printer();
+    private static final Printer INSTANCE = new Printer();
     private static final String NO_RESULT_MESSAGE = "результаты не найдены";
     private static final String TABLE_HEADER = "x  y";
     private static final String WRONG_STEP_MESSAGE = "шаг не должен быть меньше 0";
@@ -12,7 +12,7 @@ public class Printer {
     private Printer() {}
 
     public static Printer getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public void printResult(Map<Integer, Double> results) {

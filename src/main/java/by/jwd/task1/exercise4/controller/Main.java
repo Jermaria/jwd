@@ -11,7 +11,7 @@ public class Main {
         
         Expression expression = new Expression(array);
         
-        ParityChecker checker = new ParityChecker();
+        ParityChecker checker = ParityChecker.getInstance();
         Printer printer = Printer.getInstance();
         
         if (checker.isExpressionTrue(expression)) {

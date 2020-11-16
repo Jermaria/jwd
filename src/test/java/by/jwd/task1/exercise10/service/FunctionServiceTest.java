@@ -12,16 +12,17 @@ import org.testng.annotations.Test;
 import by.jwd.task1.exercise10.entity.Interval;
 
 public class FunctionServiceTest {
+    
+    private static final FunctionService SERVICE = FunctionService.getInstance();
 
   @Test
   public void getResultsOprionalTest() {
-      
-    FunctionService service = FunctionService.getInstance();
+
     Interval interval = new Interval(0, 6);
     
     try {
         
-        Optional<Map<Integer, Double>> optionalResult = service.getResultsOprional(interval, 0);
+        Optional<Map<Integer, Double>> optionalResult = SERVICE.calculateResultsOprional(interval, 0);
         Map<Integer, Double> actual = optionalResult.get();
         Map<Integer, Double> expected = new HashMap<Integer, Double>();
         expected.put(0, 0.0);

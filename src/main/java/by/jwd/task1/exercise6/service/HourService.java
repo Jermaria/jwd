@@ -6,7 +6,7 @@ import by.jwd.task1.exercise6.entity.Hour;
 
 public interface HourService {
     
-    public int getHoursNumber(int seconds) throws UnacceptableValueServiceException;
-    public List<Hour> createHourList(int hoursNum);
+    int calculateHoursNumber(int seconds) throws UnacceptableValueServiceException;
+    List<Hour> createHourList(int hoursNum);
 
 }

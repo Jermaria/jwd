@@ -8,16 +8,16 @@ import by.jwd.task1.exercise10.entity.Interval;
 
 public class FunctionService {
     
-    private static final FunctionService instance = new FunctionService();
+    private static final FunctionService INSTANCE = new FunctionService();
     private final Validator validator = Validator.getInstance();
     
     private FunctionService(){}
 
     public static FunctionService getInstance() {
-        return instance;
+        return INSTANCE;
     }
     
-    public Optional<Map<Integer, Double>> getResultsOprional(Interval interval, int step) 
+    public Optional<Map<Integer, Double>> calculateResultsOprional(Interval interval, int step) 
                                                   throws UnacceptableValueServiceException {
         
         Map<Integer, Double> results = new HashMap<Integer, Double>();
